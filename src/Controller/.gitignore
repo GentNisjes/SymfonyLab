@@ -1,0 +1,15 @@
+# Symfony-specific files
+/vendor/
+/var/
+/node_modules/
+/public/bundles/
+/public/build/
+/.idea/
+/.vscode/
+/config/
+/.cache/
+/.env
+/.env.*
+/symfony.lock
+composer.lock
+composer.phar
