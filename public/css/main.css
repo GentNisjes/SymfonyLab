@@ -178,7 +178,7 @@ a:hover {
     margin: 10px 50px 10px 50px;
     align-items: center;
     height: 5%;
-    background-color: steelblue;
+    background-color: steelblue !important;
     color: white;
     border-radius: 15px;
 }
