@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CouBooksController!{% endblock %}
+
+{% block content %}
+    <div class="left-div">
+        <h2>
+            Welcome to the CouBooks website
+        </h2>
+        <h3>
+            Are you ready to study ?
+        </h3>
+
+        <p>
+            When in need for the correct course books or printed slides, you should have a look to our
+            course book website for EA. Here you can find an overview of all course material that is
+            needed for every course within the EA program. Select your fase and see what is needed...
+        </p>
+
+        <p>
+            This <b>Book Service site</b> is specially designed as a demonstration for the web
+            technology course. In the end, this page can be found on the development web
+            <a href="site"> server studev.groept.be </a> Wthin this demonstration we will step-by-step create this site.
+        </p>
+
+    </div>
+    <div class="right-div">
+        <h3>
+            Opening Hours :
+        </h3>
+        <ul class="right-div-text">
+            <li>Mon: 9am-11am</li>
+            <li>Tue: 1pm-4pm</li>
+            <li>Fri: 1pm-4pm</li>
+        </ul>
+        <h3>
+            Feedback
+        </h3>
+        <p class="right-div-text">
+        <ul style="list-style-type: none;padding-left: 10px">
+            {% for feedback in feedbacks %}
+                <li style="border-radius: 2px; border-width: 1px; border-color: lightgray; border-style: solid;
+                            margin-bottom: 5px; padding: 5px">
+                    <p>{{ feedback.text }}</p>
+                    <small>{{ feedback.createdAt|date('Y-m-d H:i') }}</small>
+                    <a href="{{ path('feedback_delete', {'id': feedback.id}) }}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+{#        <a href="{{ path('feedback_add') }}">Add New Feedback</a>#}
+
+        </p>
+        <p class="right-div-text">Is there also a mobile app</p>
+        <p><a href="feedback.php">Add feedback...</a></p>
+
+    </div>
+    </div>
+{% endblock %}

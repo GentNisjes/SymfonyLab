@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h2>STEP 2: WHAT BOOKS DO YOU NEED?</h2>
+    <p>Select the books you wish to order...</p>
+
+    <form action="{{ path('order_step', {'step': 3}) }}" method="get">
+        <ul>
+            {% for book in books %}
+                <li>
+                    <input type="checkbox" name="selected_books[]" value="{{ book.id }}">
+                    <label>{{ book.title }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Next...</button>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>YOU'VE ORDERED...</h2>
+    <p>Below you find an overview of the books you have reserved.</p>
+
+    <ul>
+        {% for book in books %}
+            <li>{{ book }}</li>
+        {% endfor %}
+    </ul>
+
+    <button>Confirm Reservation</button>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Order Books{% endblock %}
+
+{% block content %}
+    <h1>Book Order Process</h1>
+
+    {% if step == 1 %}
+        <p class="sub-title">STEP 1: WHO ARE YOU</p>
+        <p>Please provide some info about you, so we can search the books you need...</p>
+    {% elseif step == 2 %}
+        <p class="sub-title">STEP 2: WHAT BOOKS DO YOU NEED?</p>
+        <p>Select the books you wish to order ...</p>
+    {% elseif step == 3 %}
+        <p class="sub-title">YOU'VE ORDERED...</p>
+        <p>Below you find an overview of the books you have reserved.</p>
+        <ul>
+            {% for book in order.selected_books %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}
