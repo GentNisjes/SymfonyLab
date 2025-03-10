@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CouBooksController!{% endblock %}
+
+{% block content %}
+
+    <div class="left-div">
+        <p>
+            Below you can find an overview of all available courses.
+        </p>
+        <ul style="list-style: none; padding-left: 10px;">
+            {% for book in books %}
+                <li data-isbn="{{ book.isbn }}"
+                    class="book-item">
+                    <span style="font-weight: bold;">
+                        {{ book.course | e }}
+                    </span>
+                                <span>
+                        {{ book.title | e }}
+                    </span>
+                                <span>
+                        {{ book.isbn | e }}
+                    </span>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+    <div id="info-container" style="margin: 20px;"></div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/books.js') }}"></script>
+{% endblock %}
