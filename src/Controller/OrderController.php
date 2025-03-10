@@ -51,8 +51,19 @@ class OrderController extends AbstractController
 
         // Stap 3: Bevestiging tonen
         if ($step === 3) {
-            $selectedBooks = $request->query->get('selected_books', []);
+            $selectedBooks = $request->query->all('selected_books');
             $session->set('selected_books', $selectedBooks);
+
+            if ($request->isMethod('POST')) {
+                // Simulate storing in database (replace this with your actual logic)
+                // $reservationService->storeReservation($session->get('email'), $selectedBooks);
+
+                // Add a success message
+                $this->addFlash('success', 'Your reservation has been submitted successfully!');
+
+                // Redirect to Step 1
+                return $this->redirectToRoute('order_step', ['step' => 1]);
+            }
 
             return $this->render('order/step3.html.twig', [
                 'books' => $selectedBooks,

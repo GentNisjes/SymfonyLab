@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("JS loaded"); // ✅ Debug: Check if script runs
+    console.log("JS loaded");
 
 
 
     const books = document.querySelectorAll(".book-item");
     if (books.length === 0) {
-        console.log("No books found!"); // ✅ Debug: Check if elements exist
+        console.log("No books found!");
     }
 
     books.forEach(book => {
@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector("#info-container");
 
     function showInfo(event) {
-        const isbn = this.getAttribute("data-isbn").trim(); // ✅ Correct attribute access
-        console.log("Clicked ISBN:", isbn); // ✅ Debug: See if click is detected
+        const isbn = this.getAttribute("data-isbn").trim();
+        console.log("Clicked ISBN:", isbn);
 
         if (!isbn) {
             container.innerHTML = `<p>No ISBN found for this book.</p>`;
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const url = `https://openlibrary.org/isbn/${isbn}.json`;
-        console.log("Fetching:", url); // ✅ Debug: Check fetch URL
+        console.log("Fetching:", url);
 
         fetch(url)
             .then(response => {

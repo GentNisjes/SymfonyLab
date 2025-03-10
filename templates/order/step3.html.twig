@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block content %}
     <h2>YOU'VE ORDERED...</h2>
     <p>Below you find an overview of the books you have reserved.</p>
 
@@ -9,6 +9,7 @@
             <li>{{ book }}</li>
         {% endfor %}
     </ul>
-
-    <button>Confirm Reservation</button>
+    <form action="{{ path('order_step', {'step': 3}) }}" method="post">
+        <button type="submit">Submit Reservation</button>
+    </form>
 {% endblock %}
