@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
     console.log("JS loaded");
 
 
@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const container = document.querySelector("#info-container");
+
+
+
 
     function showInfo(event) {
         const isbn = this.getAttribute("data-isbn").trim();
@@ -42,6 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
+
+
+
+
     function processResult(result) {
         const publishers = result.publishers ? result.publishers.join(", ") : "Unknown Publisher";
         const title = result.title || "Unknown Title";
@@ -55,4 +62,4 @@ document.addEventListener("DOMContentLoaded", function () {
             <p><strong>Pages:</strong> ${pageCount}</p>
         `;
     }
-});
+// });

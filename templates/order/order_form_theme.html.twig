@@ -1,0 +1,19 @@
+{# templates/form/form_theme.html.twig #}
+
+{% block form_row %}
+    <div class="form-group">
+        {{ form_label(form, null, {'attr': {'class': 'label-custom-order'}}) }}
+        <div class="input-group">
+            {{ form_widget(form, {'attr': {'class': 'input-custom-order'}}) }}
+        </div>
+        {{ form_errors(form) }}
+    </div>
+{% endblock %}
+
+{#{% block form_label %}#}
+{#    <label class="label-custom">{{ block('label') }}</label>#}
+{#{% endblock %}#}
+
+{#{% block form_widget %}#}
+{#    <input type="text" class="input-custom" />#}
+{#{% endblock %}#}

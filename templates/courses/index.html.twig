@@ -13,12 +13,12 @@
                 <li data-isbn="{{ book.isbn }}"
                     class="book-item">
                     <span style="font-weight: bold;">
-                        {{ book.course | e }}
+                        {{ book.course.name | e}}
                     </span>
                                 <span>
                         {{ book.title | e }}
                     </span>
-                                <span>
+                    <span>
                         {{ book.isbn | e }}
                     </span>
                 </li>
@@ -31,5 +31,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('js/books.js') }}"></script>
+    <script src="{{ asset('js/bookInfo.js') }}"></script>
 {% endblock %}

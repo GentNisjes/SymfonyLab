@@ -111,20 +111,20 @@ h3{
 }
 
 h1{
-    font-size: 40px;
+    font-size: 60px;
     margin: 0px;
 }
 
 h2{
-    font-size: 20px;
+    font-size: 40px;
 }
 
 h3{
-    font-size: 15px;
+    font-size: 25px;
 }
 
 p{
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 10px;
     margin-top: 0px;
 }
@@ -207,11 +207,13 @@ a:hover {
     padding: 10px;
     justify-content: space-between; /* Spread items evenly */
     width: 100%; /* Ensure it takes full width */
+
 }
 
 /* Style for the links in nav-menu and div_inline */
 .nav-menu a, .div_inline a {
     color: white;
+    font-size: 25px;
 }
 
 .div_inline a:hover, .nav-menu a:hover {
@@ -260,11 +262,13 @@ a:hover {
 .right-div-text {
     list-style: none;
     padding: 10px;
+    font-size: 20px;
 }
 
 .right-div-text li {
     width: 100%;  /* This is optional as it's the default */
     margin-bottom: 5px;  /* Optional: Adds space between the items */
+    font-size: 20px;
 }
 
 .feedback-form{
@@ -397,3 +401,73 @@ input[type="checkbox"]{
 .book-item:active{
     background-color: #f8f8f8;
 }
+
+/* Custom styles for form */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.input-group {
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    display: flex;
+    flex-direction: column;
+    /*border: 0.5px solid black;*/
+    padding: 20px;
+    margin: 5px 50px 5px 50px;
+    height: fit-content;
+    background-color: white;
+    border-radius: 15px;
+
+}
+
+.label-custom-order {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.input-custom-order {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: larger;
+}
+
+.label-custom-feedback {
+    font-weight: bold;
+    color: #007bff;
+    font-size: 16px;
+}
+
+.input-custom-feedback {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+
+    margin: 10px 0 10px 0;
+    resize: vertical;
+}
+
+/*.feedback-form{*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    !*border: 0.5px solid black;*!*/
+/*    padding: 20px;*/
+/*    margin: 5px 50px 5px 50px;*/
+/*    height: fit-content;*/
+/*    background-color: white;*/
+/*    border-radius: 15px;*/
+/*}*/
+
+/*.feedback-form input, .feedback-form textarea{*/
+/*    font-family: 'Sofia Sans Condensed', sans-serif;*/
+/*    margin: 10px 0px 10px 0px;*/
+/*    resize: vertical;*/
+/*}*/

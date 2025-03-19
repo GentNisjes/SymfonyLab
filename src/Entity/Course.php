@@ -19,9 +19,10 @@ class Course
     #[ORM\Column(type: 'string', length: 255)]
     private string $name;
 
-    #[ORM\ManyToOne(targetEntity: Staff::class)]
-    #[ORM\JoinColumn(name: 'staff_id', referencedColumnName: 'id')]
-    private ?Staff $staff;
+
+    #[ORM\ManyToOne(targetEntity: Staff::class, fetch: 'LAZY')]
+    #[ORM\JoinColumn(name: 'staff', referencedColumnName: 'id')]
+    private Staff $staff;
 
     public function getId(): ?int
     {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}CouBooks{% endblock %}</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <script src="{{ asset('js/bookInfo.js') }}" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +31,14 @@
             <p class="sub-title">A WEBTECH DEMO SITE</p>
         </div>
 
+{#        <ul class="nav-menu" style="font-size: 25px">#}
+{#            <li><a href="{{ path('home') }}" style="font-size: 25px">Home</a></li>#}
+{#            <li><a href="{{ path('courses') }}" style="font-size: 25px">Courses</a></li>#}
+{#            <li><a href="{{ path('order_step') }}" style="font-size: 25px">Reservation</a></li>#}
+{#            <li><a href="{{ path('about') }}" style="font-size: 25px">About</a></li>#}
+{#        </ul>#}
         <ul class="nav-menu">
-            <li><a href="{{ path('home') }}">Home</a></li>
+            <li><a href="{{ path('home') }}" >Home</a></li>
             <li><a href="{{ path('courses') }}">Courses</a></li>
             <li><a href="{{ path('order_step') }}">Reservation</a></li>
             <li><a href="{{ path('about') }}">About</a></li>

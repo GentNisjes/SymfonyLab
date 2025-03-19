@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ReservationRepository;
+use DateTimeInterface;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
@@ -14,7 +16,7 @@ class Reservation
     private ?int $id = null;
 
     #[ORM\Column(type: 'datetime')]
-    private \DateTimeInterface $created;
+    private DateTimeInterface $created;
 
     #[ORM\ManyToOne(targetEntity: Student::class)]
     #[ORM\JoinColumn(name: 'student_id', referencedColumnName: 'id')]
@@ -29,12 +31,12 @@ class Reservation
         return $this->id;
     }
 
-    public function getCreated(): \DateTimeInterface
+    public function getCreated(): DateTimeInterface
     {
         return $this->created;
     }
 
-    public function setCreated(\DateTimeInterface $created): self
+    public function setCreated(DateTimeInterface $created): self
     {
         $this->created = $created;
         return $this;

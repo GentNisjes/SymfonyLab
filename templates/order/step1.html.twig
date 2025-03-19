@@ -55,14 +55,20 @@
 {#{% endblock %}#}
 
 {% block content %}
-{% for message in app.flashes('success') %}
-    <script>alert("{{ message }}");</script>
-{% endfor %}
+    {% form_theme form 'order/order_form_theme.html.twig' %}
+{#    {% for message in app.flashes('success') %}#}
+{#        <script>alert("{{ message }}");</script>#}
+{#    {% endfor %}#}
+    <div style="display: flex; flex-direction: column; margin: 30px">
+        <div>
+            <h2>STEP 1: WHO ARE YOU</h2>
+            <p style="display: block; width: 100%;">Please provide some info about you, so we can search the books you need...</p>
+        </div>
+        <div>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
 
-<h2>STEP 1: WHO ARE YOU</h2>
-<p>Please provide some info about you, so we can search the books you need...</p>
-
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
 {% endblock %}

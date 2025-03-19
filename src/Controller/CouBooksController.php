@@ -2,11 +2,14 @@
 
 namespace App\Controller;
 
+use App\Entity\Feedback;
+use App\Form\FeedbackType;
 use App\Repository\BookRepository;
 use App\Repository\FeedbackRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -63,5 +66,26 @@ final class CouBooksController extends AbstractController{
         return $this->redirectToRoute('home');
     }
 
+
+
+    #[Route('/feedback/add', name: 'feedback_add')]
+    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $feedback = new Feedback();
+        $form = $this->createForm(FeedbackType::class, $feedback);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($feedback);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Feedback saved successfully!');
+            return $this->redirectToRoute('feedback');
+        }
+
+        return $this->render('feedback/index.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 
 }

@@ -42,17 +42,17 @@
                 <li style="border-radius: 2px; border-width: 1px; border-color: lightgray; border-style: solid;
                             margin-bottom: 5px; padding: 5px">
                     <p>{{ feedback.text }}</p>
-                    <small>{{ feedback.createdAt|date('Y-m-d H:i') }}</small>
-                    <a href="{{ path('feedback_delete', {'id': feedback.id}) }}">Delete</a>
+                    <p>{{ feedback.createdAt|date('Y-m-d H:i') }}</p>
+                    <a href="{{ path('feedback_delete', {'id': feedback.id}) }}" style="font-size: 20px">Delete</a>
                 </li>
             {% endfor %}
         </ul>
 
-{#        <a href="{{ path('feedback_add') }}">Add New Feedback</a>#}
+
 
         </p>
         <p class="right-div-text">Is there also a mobile app</p>
-        <p><a href="feedback.php">Add feedback...</a></p>
+        <p><a href="{{ path('feedback_add') }}">Add New Feedback</a></p>
 
     </div>
     </div>

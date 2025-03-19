@@ -42,6 +42,11 @@ class Feedback
         return $this->created;
     }
 
+    public function setAuthor(String $newAuthor): void
+    {
+        $this->author = $newAuthor;
+    }
+
     public function __toString(): string
     {
         return sprintf('%s (by %s on %s)',
